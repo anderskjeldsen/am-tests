@@ -1,0 +1,13 @@
+namespace Am.Tests
+{
+    class Assert {
+        import Am.Lang
+        
+        static fun assertEquals(expected: Any, actual: Any) {
+            if (expected != actual) {
+                throw new AssertException("Assertion failed: expected '$expected', got '$actual'")
+            }
+        }
+
+    }
+}

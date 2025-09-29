@@ -1,0 +1,25 @@
+id: "am-tests"
+version: "1.0.0"
+type: "library"
+dependencies:
+  - id: am-lang-core
+    realm: github
+    type: git-repo
+    tag: latest
+    branch: master
+    url: https://github.com/anderskjeldsen/am-lang-core.git
+platforms:
+  - id: libc
+    abstract: true
+  - id: linux-x64
+    extends: libc
+    gccCommand: gcc -O3
+  - id: macos
+    extends: libc
+    gccCommand: gcc -O3
+
+buildTargets:
+  - id: macos
+    platform: macos
+  - id: linux-x64
+    platform: linux-x64

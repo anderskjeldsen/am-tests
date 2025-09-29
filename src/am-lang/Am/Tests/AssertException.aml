@@ -1,0 +1,6 @@
+namespace Am.Tests
+{
+    class AssertException(message: String) : Exception(message) {
+        import Am.Lang
+    }
+}
