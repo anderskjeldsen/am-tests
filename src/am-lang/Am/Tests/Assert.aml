@@ -9,5 +9,35 @@ namespace Am.Tests
             }
         }
 
+        static fun assertTrue(condition: Bool) {
+            if (!condition) {
+                throw new AssertException("Assertion failed: condition is false")
+            }
+        }
+
+        static fun assertFalse(condition: Bool) {
+            if (condition) {
+                throw new AssertException("Assertion failed: condition is true")
+            }
+        }
+
+        static fun fail(message: String) {
+            throw new AssertException("Assertion failed: $message")
+        }
+
+        static fun assertNotNull(value: Any?) {
+            if (value == null) {
+                throw new AssertException("Assertion failed: value is null")
+            }
+        }
+
+        static fun assertNull(value: Any?) {
+            if (value != null) {
+                throw new AssertException("Assertion failed: value is not null")
+            }
+        }
+
+
+
     }
 }

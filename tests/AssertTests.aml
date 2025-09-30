@@ -1,0 +1,87 @@
+namespace Tests {
+    class AssertTests {
+        import Am.Lang
+        import Am.Tests
+
+        test testAssertEquals() {
+            Assert.assertEquals(5, 5)
+        }
+
+        test testAssertEqualsNegative() {
+            var error = true
+            try {
+                Assert.assertEquals(5, 4)
+            } catch (e: AssertException) {
+                error = false
+            }
+            Assert.assertEquals(false, error)
+        }
+
+        test testAssertTrue() {
+            Assert.assertTrue(true)
+        }
+
+        test testAssertTrueNegative() {
+            var error = true
+            try {
+                Assert.assertTrue(false)
+            } catch (e: AssertException) {
+                error = false
+            }
+            Assert.assertEquals(false, error)
+        }
+        
+        test testAssertFalse() {
+            Assert.assertFalse(false)
+        }
+
+        test testAssertFalseNegative() {
+            var error = true
+            try {
+                Assert.assertFalse(true)
+            } catch (e: AssertException) {
+                error = false
+            }
+            Assert.assertEquals(false, error)
+        }
+
+        test testFail() {
+            var error = true
+            try {
+                Assert.fail("This is a failure")
+            } catch (e: AssertException) {
+                error = false
+            }
+            Assert.assertEquals(false, error)
+        }
+
+        test testAssertNotNull() {
+            Assert.assertNotNull("not null")
+        }
+
+        test testAssertNotNullNegative() {
+            var error = true
+            try {
+                Assert.assertNotNull(null)
+            } catch (e: AssertException) {
+                error = false
+            }
+            Assert.assertEquals(false, error)
+        }
+
+        test testAssertNull() {
+            Assert.assertNull(null)
+        }
+
+        test testAssertNullNegative() {
+            var error = true
+            try {
+                Assert.assertNull("not null")
+            } catch (e: AssertException) {
+                error = false
+            }
+            Assert.assertEquals(false, error)
+        }
+        
+    }
+}
