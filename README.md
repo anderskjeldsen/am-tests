@@ -26,6 +26,7 @@ dependencies:
     tag: latest
     branch: master
     url: https://github.com/anderskjeldsen/am-tests.git
+    testOnly: true
 ```
 
 ## Usage
