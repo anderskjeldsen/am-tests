@@ -9,6 +9,28 @@ namespace Am.Tests
             }
         }
 
+        #require floatingPoint
+        static fun assertDoubleClose(expected: Double, actual: Double, epsilon: Double) {
+            var diff = actual - expected
+            if (diff < 0.0) {
+                diff = -diff
+            }
+            if (diff > epsilon) {
+                throw new AssertException("Assertion failed: expected '$expected' +/- '$epsilon', got '$actual'")
+            }
+        }
+
+        #require floatingPoint
+        static fun assertFloatClose(expected: Float, actual: Float, epsilon: Float) {
+            var diff = actual - expected
+            if (diff < 0.0F) {
+                diff = -diff
+            }
+            if (diff > epsilon) {
+                throw new AssertException("Assertion failed: expected '$expected' +/- '$epsilon', got '$actual'")
+            }
+        }
+
         static fun assertTrue(condition: Bool) {
             if (!condition) {
                 throw new AssertException("Assertion failed: condition is false")
