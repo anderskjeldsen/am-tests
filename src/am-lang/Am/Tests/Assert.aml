@@ -10,6 +10,28 @@ namespace Am.Tests
         }
 
         #require floatingPoint
+        static fun assertDoubleCloseEnough(expected: Double, actual: Double) {
+            var diff = actual - expected
+            if (diff < 0.0) {
+                diff = -diff
+            }
+            if (diff > 0.00001) {
+                throw new AssertException("Assertion failed: expected '$expected' close enough, got '$actual'")
+            }
+        }
+
+        #require floatingPoint
+        static fun assertFloatCloseEnough(expected: Float, actual: Float) {
+            var diff = actual - expected
+            if (diff < 0.0F) {
+                diff = -diff
+            }
+            if (diff > 0.00001F) {
+                throw new AssertException("Assertion failed: expected '$expected' close enough, got '$actual'")
+            }
+        }
+
+        #require floatingPoint
         static fun assertDoubleClose(expected: Double, actual: Double, epsilon: Double) {
             var diff = actual - expected
             if (diff < 0.0) {
