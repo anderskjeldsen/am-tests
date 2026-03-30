@@ -81,7 +81,11 @@ namespace Am.Tests
             }
         }
 
-
+        static fun assertNotEquals(expected: Any, actual: Any) {
+            if (expected == actual) {
+                throw new AssertException("Assertion failed: expected '$expected' to not equal '$actual'")
+            }
+        }
 
     }
 }
