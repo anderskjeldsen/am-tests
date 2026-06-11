@@ -69,13 +69,16 @@ namespace Am.Tests
             throw new AssertException("Assertion failed: $message")
         }
 
-        static fun assertNotNull(value: Any?) {
+        // `Any` is intrinsically nullable — the parameter can already
+        // hold null without the `?` suffix. The compiler rejects `Any?`
+        // explicitly (ANY-4) since it's redundant.
+        static fun assertNotNull(value: Any) {
             if (value == null) {
                 throw new AssertException("Assertion failed: value is null")
             }
         }
 
-        static fun assertNull(value: Any?) {
+        static fun assertNull(value: Any) {
             if (value != null) {
                 throw new AssertException("Assertion failed: value is not null")
             }

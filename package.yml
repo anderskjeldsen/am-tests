@@ -3,6 +3,7 @@ version: "1.0.0"
 type: "library"
 features:
   - name: floatingPoint
+    global: true
     additionalLibraries:
       - m
 dependencies:
