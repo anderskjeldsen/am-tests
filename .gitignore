@@ -2,3 +2,6 @@ builds/*
 *.generated.c
 *.o
 .DS_Store
+# Build output at any depth (builds-v2/, test-builds/, test-builds-v2/ too).
+**/builds*/
+**/test-builds*/
